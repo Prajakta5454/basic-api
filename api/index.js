@@ -1,3 +1,4 @@
+// api/index.js
 const express = require("express");
 const cors = require("cors");
 
@@ -5,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-let storedText = "Hello world";
+let storedText = "Initial text";
 
 app.get("/gettext", (req, res) => {
   console.log("Fetching text");
@@ -23,5 +24,4 @@ app.post("/updatetext", (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
