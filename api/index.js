@@ -1,4 +1,3 @@
-// api/index.js
 const express = require("express");
 const cors = require("cors");
 
@@ -24,4 +23,6 @@ app.post("/updatetext", (req, res) => {
   }
 });
 
-module.exports = app;
+module.exports = (req, res) => {
+  app(req, res);
+};
